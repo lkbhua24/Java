@@ -6,9 +6,10 @@ public class ArithmeticoperatorsDemo2 {
         byte b = 20;
         int sum = a+b;
         System.out.println(sum);
-        // £¨byte£©b1+b2 Ç¿ÖÆ×ª»»
+        // Â£Â¨byteÂ£Â©b1+b2 Ã‡Â¿Ã–Ã†Ã—ÂªÂ»Â»
         byte result = (byte)(a+b);
         System.out.println(result);
     }
 }
+
 */
