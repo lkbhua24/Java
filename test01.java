@@ -1,25 +1,21 @@
-package com.lkbhua.operators.com.lkbhua;
+package com.lkbhua.Test;
 
 import java.util.Scanner;
 
 public class test01 {
-    public static void main(String[] args) {
-        // é”®ç›˜è¾“å…¥ä¸€ä¸ªä¸‰ä½æ•°ï¼Œè·å–å…¶ä¸­çš„ä¸ªä½ï¼Œåä½ï¼Œç™¾ä½
-
-        // 1.é”®ç›˜å½•å…¥
+    public static void main(String[] args){
+        /* ÊäÈëÒ»¸öÕûÊıÆ±ºÅ£¬Èç¹ûÊÇÅ¼ÊıÆ±ºÅ×øµ½×ó±ß×ùÎ»
+        * ÆæÊıÆ±ºÅ×øµ½ÓÒ±ß×ùÎ»
+        * */
         Scanner sc = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥ä¸€ä¸ªä¸‰ä½æ•°ï¼š");
+        System.out.println("ÇëÊäÈëÒ»¸öÕûÊıÆ±ºÅ£º");
         int number = sc.nextInt();
-        // 2.è·å–ä¸ªä½
-        int ge = number % 10;
-        // 3.è·å–åä½
-        int shi = number / 10 % 10;
-        // 4.è·å–ç™¾ä½
-        int bai = number / 100;
-        // 5.æ‰“å°ç»“æœ
-        System.out.println("ä¸ªä½:" + ge);
-        System.out.println("åä½:" + shi);
-        System.out.println("ç™¾ä½:" + bai);
+        if(number % 2 == 0){
+            System.out.println("×ø×ó±ß×ùÎ»");
+        }
+        else {
+            System.out.println("×øÓÒ±ß×ùÎ»");
+        }
 
     }
 }
