@@ -1,21 +1,30 @@
-package com.lkbhua.operators.com.lkbhua;
+package com.lkbhua.Test;
+
+import java.util.Scanner;
 
 public class test05 {
     public static void main(String[] args){
-        /* 需求：三个和尚比身高，已知他们的身高为150，210，180，
-        求出最高的和尚身高
+        /*  需求： 给定两个整数，被除数和除数（都是正数，且不超过int的范围）
+            将两数相除，要求不使用乘法，除法和取余运算，并返回商和余数。
         * */
+        // 思路：除法的本质就是计数被除数中有多少次可以被除数相减的倍
 
-        // 1.定义三个变量记录三个身高
-        int height1 = 150;
-        int height2 = 210;
-        int height3 = 180;
+        // 提示用户输入两个数
+        System.out.println("请输入被除数和除数:");
 
-        // 2。拿着第一个和尚的身高跟第二个和尚的身高进行比较
-        // 再拿着他们相比较的结果跟第三个和尚的身高进行比较
-        int temp = height1 > height2 ? height1 : height2;
-        int max = temp > height3 ? temp : height3;
-        System.out.println(max);
-        // ctrl + alt + l 自动格式化代码
+        // 获取用户输入
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int count = 0;
+
+        // 利用循环进行相减逻辑
+        while(a>=b){
+            a = a-b;
+            count++;
+        }
+        // 输出结果
+        System.out.println("商为："+count);
+        System.out.println("余数为："+a);
     }
 }
