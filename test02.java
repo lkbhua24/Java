@@ -4,34 +4,35 @@ import java.util.Scanner;
 
 public class test02 {
     public static void main(String[] args){
-        /*  需求：输入一个年龄。
-        判断是儿童还是少年还是青年还是中年还是老年还是神仙
-        儿童（0-11）
-        少年（12-17）
-        青年（18-30）
-        中年（31-50）
-        老年（51-70）
+        /*  需求：键盘录入一个大于等于2的整数x，计算并返回x的平方根
+            结果只保留整数部分，小数部分将被舍去
         * */
-        System.out.println("请输入年龄：");
+        // 分析：
+        // 10
+        // 1*1=1<10;
+        // 2*2=4<10;
+        // 3*3=9<10;
+        // 4*4=16>10;
+        // 推断：10的平方根在3-4之间
+
+        // 在代码中
+        // 从1开始循环，拿着数字的平方跟原来的数字进行比较
+        // 如果小于的，那么继续往后判断
+        // 如果相等，那么当前数字就是平方根
+        // 如果大于的，那么前一个数字就是平方根的整数部分
+        System.out.println("请输入一个整数:");
         Scanner sc = new Scanner(System.in);
-        int age = sc.nextInt();
-        if(age>=0 && age<=11){
-            System.out.println("儿童");
+        int num = sc.nextInt();
+        for(int i = 1; i <= num; i++){
+            if(i * i == num){
+                System.out.println(i+"就是"+ num+"的平方根");
+                break;
+            }else if(i * i > num){
+                System.out.println((i - 1)+"就是"+ num+"的平方根");
+                break;
+            }
         }
-        else if(age>=12 && age<=17){
-            System.out.println("少年");
-        }
-        else if(age>=18 && age<=30){
-            System.out.println("青年");
-        }
-        else if(age>=31 && age<=50){
-            System.out.println("中年");
-        }
-        else if(age>=51 && age<=70){
-            System.out.println("老年");
-        }
-        else{
-            System.out.println("神仙");
-        }
+
+
     }
 }
