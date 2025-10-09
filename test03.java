@@ -4,33 +4,29 @@ import java.util.Scanner;
 
 public class test03 {
     public static void main(String[] args) {
-        /*  需求：商城都会有vip会员制度，假设商品为1000元
-        键盘录入会员级别，并计算出实际支付的钱
-        会员1级，打9折
-        会员2级，打8折
-        会员3级，打7折
-        非会员，不打折
+        /*  需求：判断一个数是否是质数
+        *   质数：只能被1和自身整除的数
         * */
-        int price = 1000;
-        System.out.println("请输入会员级别：");
+        // 判断：
+        // 写一个循环，从2开始，一直判断到num-1
+        // 看这个范围之内，有没有数字可以被num整除
         Scanner sc = new Scanner(System.in);
-        int level = sc.nextInt();
-        if(level == 1)
-        {
-            System.out.println("会员1级，打9折，实际支付：" + price * 0.9);
+        System.out.println("请输入一个数字：");
+        int num = sc.nextInt();
+        // 定义一个变量标记：标记num是否一个质数
+        boolean flag = true;
+        for(int i = 2; i < num; i++){
+            if(num%i==0){
+                flag = false;
+                // System.out.println("不是质数");
+                break;
+            }
         }
-        else if(level == 2)
-        {
-            System.out.println("会员2级，打8折，实际支付：" + price * 0.8);
+        // 只有当循环结束了，表示这个范围之内所有的数字都没有被num整除，那么num就是质数
+        if(flag){
+            System.out.println("是质数");
+        }else{
+            System.out.println("不是质数");
         }
-        else if(level == 3)
-        {
-            System.out.println("会员3级，打7折，实际支付：" + price * 0.7);
-        }
-        else
-        {
-            System.out.println("非会员，不打折，实际支付：" + price);
-        }
-        System.out.println("欢迎下次光临");
     }
 }
