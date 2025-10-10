@@ -1,31 +1,21 @@
-package com.lkbhua.loopdemo;
-
-import java.util.Scanner;
+package com.lkbhua.MethodDemo1;
 
 public class demo3 {
     public static void main(String[] args) {
-        /* 需求：键盘录入两个数字，表示一个范围
-        求这个范围能别三整除，又能被五整除的数字有多少个并且输出
+        /*  目标：掌握完整的方法定义，包括带有参数和返回值
+            需求：定义一个方法，求一家商场每个季度的营业额
+                根据方法结果在计算出全年营业额
         * */
-
-        // 分析：
-        // 1，键盘录入两个数字
-        Scanner sc = new Scanner(System.in);
-        System.out.println("录入两个数字表示范围：");
-        System.out.println("请输入两个数字：");
-        int start = sc.nextInt();
-        int end = sc.nextInt();
-        int count = 0;
-
-        // 2.利用循环获取这个范围的每一个数字
-        for(int i = start; i <= end; i++)
-        {
-            // 3.判断这个数字是否满足条件
-            if(i % 3 == 0 && i % 5 == 0)
-            {
-                System.out.println(i);
-                count++;
-            }
-        }
+      double sale1 =  getQuarterSale(1000,2000,3000);
+      double sale2 =  getQuarterSale(2000,3000,4000);
+      double sale3 =  getQuarterSale(5000,6000,7000);
+      double sale4 =  getQuarterSale(1000,2000,3000);
+      double yearSale = sale1+sale2+sale3+sale4;
+      System.out.println(yearSale);
+    }
+    public static double getQuarterSale(double q1,double q2,double q3)
+    {
+        double sale = q1+q2+q3;
+        return sale;
     }
 }
